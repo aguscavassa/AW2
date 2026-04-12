@@ -5,6 +5,7 @@
         "id_usuario": 1,
         "fecha": "2026-03-30",
         "total": 59.99,
+        "efectivo": true,
         "productos": [
             {
                 "id": 3,
@@ -16,7 +17,8 @@
         "id": 2,
         "id_usuario": 3,
         "fecha": "2026-04-02",
-        "total": 89.98,
+        "total": 39.98,
+        "efectivo": false,
         "productos": [
             {
                 "id": 1,
@@ -29,6 +31,7 @@
         "id_usuario": 3,
         "fecha": "2026-04-03",
         "total": 39.99,
+        "efectivo": true,
         "productos": [
             {
                 "id": 2,
@@ -40,7 +43,8 @@
         "id": 4,
         "id_usuario": 4,
         "fecha": "2026-04-10",
-        "total": 69.99,
+        "total": 69.98,
+        "efectivo": false,
         "productos": [
             {
                 "id": 4,
