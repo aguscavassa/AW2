@@ -1,0 +1,32 @@
+{
+    "productos": [
+        {
+        "id": 1,
+        "nombre": "Camiseta Tour",
+        "desc": "Camiseta de algodón de alta calidad",
+        "precio": 19.99,
+        "imagen": "https://example.com/camisetatour.jpg"
+        },
+        {
+        "id": 2,
+        "nombre": "Pantalones Vintage",
+        "desc": "Pantalones vaqueros ajustados",
+        "precio": 39.99,
+        "imagen": "https://example.com/pantalonesvintage.jpg"
+        },
+        {
+        "id": 3,
+        "nombre": "Zapatillas Star",
+        "desc": "Zapatillas deportivas cómodas",
+        "precio": 59.99,
+        "imagen": "https://example.com/zapatillasstar.jpg"
+        },
+        {
+        "id": 4,
+        "nombre": "Campera Urbana Style",
+        "desc": "Campera de estilo urbano",
+        "precio": 49.99,
+        "imagen": "https://example.com/camperaurbana.jpg"
+        }
+    ]
+}
