@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AW2 - Productos</title>
+    </head>
+    <body>
+        <div class="d-flex flex-column align-items-center" style="height: 100vh;">
+            <div class="my-5 px-4 py-4 text-center w-100">
+                <h1 class="display-5 fw-bold">Productos</h1>
+                <div class="mx-auto w-25">
+                    <form class="d-flex" role="search">
+                        <select class="form-select me-2" aria-label="Filter">
+                            <option value="camisetas" selected>Camisetas</option>
+                            <option value="pantalones">Pantalones</option>
+                            <option value="calzado">Calzado</option>
+                            <option value="camperas">Camperas</option>
+                        </select>
+                        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/> -->
+                        <button id="filtrar-btn" class="btn btn-outline-success" type="submit">Filtrar</button>
+                    </form>
+                </div>
+                <div id="productos-container" class="col-lg-6 mx-auto my-4">
+                </div>
+            </div>
+        </div>
+        <script type="module" src="js/productos.js"></script>
+    </body>
+</html>

@@ -2,6 +2,7 @@
     "usuarios": [
         {
         "id": 1,
+        "usuario": "jperez",
         "nombre": "Juan",
         "apellido": "Pérez",
         "email": "jp@gmail.com",
@@ -9,6 +10,7 @@
         },
         {
         "id": 2,
+        "usuario": "mgomez",
         "nombre": "María",
         "apellido": "Gómez",
         "email": "am@gmail.com",
@@ -16,6 +18,7 @@
         },
         {
         "id": 3,
+        "usuario": "acavassa",
         "nombre": "Agustín",
         "apellido": "Cavassa",
         "email": "ac@gmail.com",
@@ -23,6 +26,7 @@
         },
         {
         "id": 4,
+        "usuario": "llopez",
         "nombre": "Lucía",
         "apellido": "López",
         "email": "ll@gmail.com",

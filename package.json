@@ -15,10 +15,13 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
+    "build": "",
+    "start": "npm run build && node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "body-parser": "^2.2.2",
+    "bootstrap": "^5.3.8",
     "dotenv": "^17.4.2",
     "express": "^5.2.1"
   }
