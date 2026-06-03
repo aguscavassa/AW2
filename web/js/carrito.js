@@ -5,6 +5,11 @@ export async function init() {
         carritoContainer.innerHTML = '<p>El carrito está vacío.</p>';
         return;
     }
+    if (sessionStorage.getItem('jwt') === null) {
+        alert('Debes iniciar sesión para finalizar tu compra');
+        window.location.href = '/';
+        return;
+    }
     itemsCarrito.forEach(async (itemId) => {
         await fetch(`/api/productos/${itemId}`).then(response => response.json()).then(producto => {
             const productoCard = document.createElement('div');
@@ -30,7 +35,10 @@ export async function init() {
             <input type="checkbox" id="efectivo-checkbox" class="form-check-input"><label for="efectivo-checkbox" class="form-check-label">Pagar en efectivo</label>
         </div>
 
-        <button id="finalizar-compra-btn" class="btn btn-success">Generar Orden de Compra</button>`);
+        <div class="d-flex justify-content-center gap-3">
+            <button id="finalizar-compra-btn" class="btn btn-success">Generar Orden de Compra</button>
+            <button id="limpiar-carrito-btn" class="btn btn-secondary">Limpiar Carrito</button>
+        </div>`);
     document.getElementById('finalizar-compra-btn').addEventListener('click', async () => {
         await fetch(`/api/ventas/add`, {
             method: 'POST',
@@ -42,6 +50,11 @@ export async function init() {
         });
         alert('Compra realizada con éxito');
         localStorage.removeItem('productoAComprar');
+        window.location.href = '/';
+    });
+    document.getElementById('limpiar-carrito-btn').addEventListener('click', () => {
+        localStorage.removeItem('productoAComprar');
+        alert('Carrito limpiado');
         window.location.href = '/';
     });
 }

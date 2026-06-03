@@ -10,3 +10,13 @@ export const crearVenta = async(userId, productos, efectivo) => {
         console.error(error);
     }
 }
+
+export const eliminarVenta = async(id) => {
+    try {
+        await connectToDatabase();
+        const res = await Venta.findByIdAndDelete(id);
+        return JSON.parse(JSON.stringify(res));
+    } catch (error) {
+        console.error(error);
+    }
+}
