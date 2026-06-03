@@ -2,9 +2,9 @@ import express from 'express';
 import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
-import productosRutas from './server/js/productosRutas.js';
-import usuariosRutas from './server/js/usuariosRutas.js';
-import ventasRutas from './server/js/ventasRutas.js';
+import productosRutas from './server/rutas/productos.rutas.js';
+import usuariosRutas from './server/rutas/usuarios.rutas.js';
+import ventasRutas from './server/rutas/ventas.rutas.js';
 
 dotenv.config();
 

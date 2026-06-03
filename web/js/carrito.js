@@ -32,10 +32,11 @@ export async function init() {
 
         <button id="finalizar-compra-btn" class="btn btn-success">Generar Orden de Compra</button>`);
     document.getElementById('finalizar-compra-btn').addEventListener('click', async () => {
-        await fetch(`/api/ventas/add/${sessionStorage.getItem('usuarioLogeado')}`, {
+        await fetch(`/api/ventas/add`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `${sessionStorage.getItem('jwt')}`
             },
             body: JSON.stringify({ productos: itemsCarrito, efectivo: document.getElementById('efectivo-checkbox').checked })
         });
