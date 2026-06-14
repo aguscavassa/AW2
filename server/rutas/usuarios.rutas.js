@@ -1,6 +1,7 @@
 import {Router} from 'express';
 import fs from 'fs';
-import {crearUsuario, obtenerUsuario} from '../actions/usuarios.actions.js';
+import {crearUsuario, obtenerUsuario, eliminarUsuario} from '../actions/usuarios.actions.js';
+import {usuarioTieneVentas} from '../actions/ventas.actions.js';
 import bodyParser from 'body-parser';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
@@ -47,6 +48,25 @@ router.post('/add', jsonParser, async (req, res) => {
         res.status(201).json(result);
     } catch (error) {
         res.status(500).json({ error: 'Error al crear el usuario' });
+    }
+});
+
+router.delete('/:id', verificarToken, async (req, res) => {
+    const userId = req.params.id;
+    try {
+        const ventas = await usuarioTieneVentas(userId);
+        if (ventas) {
+            res.status(400).json({ error: 'No se puede eliminar el usuario porque tiene ventas asociadas' });
+            return;
+        }
+        const result = await eliminarUsuario(userId);
+        if (result.error) {
+            res.status(500).json(result);
+            return;
+        }
+        res.status(200).json(result);
+    } catch (error) {
+        res.status(500).json({ error: 'Error al eliminar el usuario' });
     }
 });
 

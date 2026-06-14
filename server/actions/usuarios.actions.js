@@ -22,3 +22,12 @@ export const obtenerUsuario = async(user) =>  {
         console.error(error);
     }
 }
+export const eliminarUsuario = async(id) => {
+    try {
+        await connectToDatabase();
+        const res = await Usuario.findByIdAndDelete(id);
+        return JSON.parse(JSON.stringify(res));
+    } catch (error) {
+        console.error(error);
+    }
+}

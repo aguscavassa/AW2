@@ -20,3 +20,34 @@ export const eliminarVenta = async(id) => {
         console.error(error);
     }
 }
+
+export const obtenerVenta = async(id) => {
+    try {
+        await connectToDatabase();
+        const res = await Venta.findById(id);
+        return JSON.parse(JSON.stringify(res));
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export const usuarioTieneVentas = async(userId) => {
+    try {
+        await connectToDatabase();
+        const res = await Venta.exists({ userId });
+        return !!res;
+    } catch (error) {
+        console.error(error);
+        return false;
+    }
+}
+
+export const actualizarVenta = async(id, productos, efectivo) => {
+    try {
+        await connectToDatabase();
+        const res = await Venta.findByIdAndUpdate(id, { productos, efectivo }, { returnDocument: 'after' });
+        return JSON.parse(JSON.stringify(res));
+    } catch (error) {
+        console.error(error);
+    }
+}

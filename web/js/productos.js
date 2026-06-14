@@ -1,5 +1,14 @@
 export async function init() {
     filtrarProductos();
+    const filtrarBtn = document.getElementById('filtrar-btn');
+    filtrarBtn.addEventListener('click', async (event) => {
+        event.preventDefault();
+        let productosContainer = document.getElementById('productos-container');
+        productosContainer.innerHTML = '';
+        const categoriaSelect = document.querySelector('select[aria-label="Filter"]');
+        const categoria = categoriaSelect.value;
+        await filtrarProductos(categoria);
+    });
 }
 
 async function filtrarProductos(categoria = null) {
@@ -81,12 +90,3 @@ async function filtrarProductos(categoria = null) {
     });
 }
 
-const filtrarBtn = document.getElementById('filtrar-btn');
-filtrarBtn.addEventListener('click', async (event) => {
-    event.preventDefault();
-    let productosContainer = document.getElementById('productos-container');
-    productosContainer.innerHTML = '';
-    const categoriaSelect = document.querySelector('select[aria-label="Filter"]');
-    const categoria = categoriaSelect.value;
-    await filtrarProductos(categoria);
-});
