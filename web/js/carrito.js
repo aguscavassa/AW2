@@ -7,6 +7,7 @@ export async function init() {
     }
     if (sessionStorage.getItem('jwt') === null) {
         alert('Debes iniciar sesión para finalizar tu compra');
+        localStorage.removeItem('productoAComprar');
         window.location.href = '/';
         return;
     }
