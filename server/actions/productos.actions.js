@@ -30,3 +30,13 @@ export const obtenerProducto = async(id) => {
         console.error(error);
     }
 }
+
+export const eliminarProducto = async(id) => {
+    try {
+        await connectToDatabase();
+        const res = await Producto.findByIdAndDelete(id);
+        return JSON.parse(JSON.stringify(res));
+    } catch (error) {
+        console.error(error);
+    }
+}

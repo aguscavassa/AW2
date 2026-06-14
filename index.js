@@ -16,6 +16,6 @@ app.use('/api/productos', productosRutas);
 app.use('/api/usuarios', usuariosRutas);
 app.use('/api/ventas', ventasRutas);
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log(`Servidor en puerto ${process.env.PORT}!`);
 });
