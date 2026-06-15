@@ -1,4 +1,4 @@
 # Proyecto Aplicaciones Web 2
 Por Agustín Cavassa
 
-1. Creación de estructura JSON basica con información ficticia a modo de ejemplo.
+- Utilizar .env.example para construir un archivo .env con sus propias variables de entorno.

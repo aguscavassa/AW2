@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import dotenv from 'dotenv';
+import Producto from '../schemas/productos.schema.js';
 
 dotenv.config();
 
@@ -18,5 +19,7 @@ export const connectToDatabase = async () => {
     });
 
     cached.conn = await cached.promise;
+
+    
     return cached.conn;
 }

@@ -16,6 +16,7 @@ app.use('/api/productos', productosRutas);
 app.use('/api/usuarios', usuariosRutas);
 app.use('/api/ventas', ventasRutas);
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 3000, async () => {
+  await import('./server/actions/productos.actions.js').then(({ crearNuevosProductos }) => crearNuevosProductos());
   console.log(`Servidor en puerto ${process.env.PORT}!`);
 });
